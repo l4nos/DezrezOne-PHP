@@ -1,27 +1,34 @@
-# reziPHP
-Rezi PHP Class for quick integration for web devs
+# DezrezOne PHP Dependency
+This PHP class is designed to be injected into PSR namespace projects and autoloaded using composer.
 
+<h2>Installation</h2>
 
-Hello, This is a simple php class designed to be included in composer based projects. It should allow web developers to quickly implement rezi property search functionality within their website projects.
+<pre>composer install lanos/drone</pre>
 
 <h2>Usage</h2>
 
 Initiate the class via:
 
-<pre>$rezi = new Rezi($apikey, $clientsecret, $clientID, $environment);</pre>
+<pre>$dezrez = new Dezrez($apikey, $agencyID);</pre>
 
-Authentication is already done for you on class __construct
+Authentication is done via the API key. No need to exchange tokens.
 
-NOTE: The $apikey variable should be set to <strong>false</strong> if you are using a client secret and ID. The class will save the returned access token to a randomly named txt file.
+The following functions can be called.
 
-Call an endpoint by:
+<pre>
+// Carry out a property search
+$dezrez->propertySearch($arrayOfCriteria)</pre>
+<pre>
+// Get a single property
+$dezrez->propertyDetails($propertyID)</pre>
+<pre>
+// Change count as necesssary
+$dezrez->featuredProperties(4, $rentalperiod, $branchlist)</pre>
+<pre>
+// Change count as necesssary
+$dezrez->propertySearch(4, $rentalperiod, $branchlist)</pre>
 
-<pre>$rezi->getRezi($type, $endpoint, $pagesize = false, $pagenumber = false, $payload = false, $qstring = false)</pre>
-
-The JSON encoded results are automatically decoded into a PHP array ready for use.
-
-WARNING: Ensure directory indexing is OFF in apache or nginx, otherwise someone could find your access token.
-
-<h3>New Features will be added as they become available in Rezi.</h3>
+The results are returned as XML and are loaded using simpleXML. Please ensure you have simpleXML enabled on your hosting.
+<h3>If you want more functionality, why not upgrade to Rezi?</h3>
 
 Have Fun!
