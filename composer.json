@@ -1,0 +1,15 @@
+{
+    "name": "lanos/dezrezone-PHP",
+    "description": "A dezrezone PHP class",
+    "version" : "1.0.0",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lanos",
+            "email": "rob@synergy6.co.uk"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
